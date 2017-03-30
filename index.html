@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CanJS 3 memory test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script type="text/stache" id="my-component">
+            value of test property: {{testProperty}}
+        </script>
+
+        <script type="text/stache" id="content-using-my-component">
+            <div id="my-component-container" />
+
+            {{#if myCompInserted}}
+                <a ($click)="removeMyComp()" href="javascript://">Remove</a>
+            {{else}}
+                <a ($click)="insertMyComp()" href="javascript://">Insert</a>
+            {{/if}}
+        </script>
+
+        <script data-main="js/init" src="js/lib/require.js"></script>
+    </body>
+</html>
